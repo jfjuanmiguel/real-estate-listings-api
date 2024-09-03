@@ -1,0 +1,30 @@
+services:
+  postgres_starter_kit_api: # Needs updating
+    image: postgres:alpine
+    container_name: postgres_starter_kit_api # Needs updating
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis_starter_kit_api: # Needs updating
+    image: redis:alpine
+    container_name: redis_starter_kit_api # Needs updating
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+networks:
+  default:
+    name: starter_kit_api # Needs updating
+
+volumes:
+  postgres_data:
+  redis_data:
