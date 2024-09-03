@@ -20,7 +20,7 @@
 #       - name: Install Railway CLI
 #         run: pnpm add --global @railway/cli
 #       - name: Deploy to Railway
-#         run: railway up --service="nestjs-starter"
+#         run: railway up --service="real-estate-listing"
 #         env:
 #           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 #           REDIS_URL: ${{ secrets.REDIS_URL }}

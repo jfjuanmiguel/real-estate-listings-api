@@ -1,7 +1,7 @@
 services:
-  postgres_starter_kit_api: # Needs updating
+  postgres_real_estate_listing:
     image: postgres:alpine
-    container_name: postgres_starter_kit_api # Needs updating
+    container_name: postgres_real_estate_listing
     restart: always
     env_file:
       - .env
@@ -13,9 +13,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  redis_starter_kit_api: # Needs updating
+  redis_real_estate_listing:
     image: redis:alpine
-    container_name: redis_starter_kit_api # Needs updating
+    container_name: redis_real_estate_listing
     ports:
       - '6379:6379'
     volumes:
@@ -23,7 +23,7 @@ services:
 
 networks:
   default:
-    name: starter_kit_api # Needs updating
+    name: real_estate_listing
 
 volumes:
   postgres_data:

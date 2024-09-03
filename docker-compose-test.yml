@@ -1,7 +1,7 @@
 services:
-  postgres_starter_kit_api_test: # Needs updating
+  postgres_real_estate_listing_test:
     image: postgres:alpine
-    container_name: postgres_starter_kit_api_test # Needs updating
+    container_name: postgres_real_estate_listing_test
     restart: 'no'
     env_file:
       - .env.test
@@ -18,9 +18,9 @@ services:
       timeout: 5s
       retries: 5
 
-  redis_starter_kit_api_test: # Needs updating
+  redis_real_estate_listing_test:
     image: redis:alpine
-    container_name: redis_starter_kit_api_test # Needs updating
+    container_name: redis_real_estate_listing_test
     ports:
       - '6380:6379' # Different port to avoid conflict with the development environment
     volumes:
@@ -28,7 +28,7 @@ services:
 
 networks:
   default:
-    name: starter_kit_api_test # Needs updating
+    name: real_estate_listing_test
 
 volumes:
   postgres_data_test:
