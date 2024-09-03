@@ -6,9 +6,19 @@ import { DatabaseService } from '../../database/database.service';
 export class ListingService {
   constructor(private readonly databaseService: DatabaseService) {}
 
-  async create(createListingDto: CreateListingDto) {
-    return await this.databaseService.listing.create({
-      data: createListingDto,
+  async create({
+    data,
+    images,
+  }: {
+    data: CreateListingDto;
+    images: Express.Multer.File[];
+  }) {
+    const listing = await this.databaseService.listing.create({
+      data,
     });
+    for (const image of images) {
+      console.log(`image:`, image);
+    }
+    return listing;
   }
 }
