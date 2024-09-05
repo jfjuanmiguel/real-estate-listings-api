@@ -29,6 +29,7 @@
     "db:studio": "npx prisma studio"
   },
   "dependencies": {
+    "@nestjs/bull": "^10.2.1",
     "@nestjs/cache-manager": "^2.2.2",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.3",
@@ -36,6 +37,7 @@
     "@nestjs/mapped-types": "^2.0.5",
     "@nestjs/platform-express": "^10.0.0",
     "@prisma/client": "^5.18.0",
+    "bull": "^4.16.2",
     "cache-manager": "^5.7.6",
     "cache-manager-redis-store": "2",
     "class-transformer": "^0.5.1",
