@@ -22,6 +22,7 @@ export class ListingService {
     const listing = await this.databaseService.listing.create({
       data,
     });
+
     for (const image of images) {
       await this.listingQueue.uploadListingImage({
         base64File: this.fileService.bufferToBase64(image.buffer),
@@ -29,6 +30,7 @@ export class ListingService {
         listingId: listing.id,
       });
     }
+
     return listing;
   }
 }
